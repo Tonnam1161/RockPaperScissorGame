@@ -5,12 +5,57 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css">
-    <title>Phaser - Template</title>
+    <title>Rock Paper Scissors - 3D Battle</title>
 </head>
 
 <body>
     <div id="app">
         <div id="game-container"></div>
+        <!-- Chat UI -->
+        <div id="chat-container" style="display: none;">
+            <div id="chat-header">
+                <span>Game Chat</span>
+                <button id="chat-toggle">−</button>
+            </div>
+            <div id="chat-messages"></div>
+            <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Type a message..." maxlength="100" />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- Mode Selection Modal -->
+        <div id="mode-modal">
+            <h1>Rock Paper Scissors</h1>
+            <p>Choose your game mode:</p>
+            <div class="mode-buttons">
+                <button id="play-friend">👥 Play with Friend</button>
+                <button id="play-random">🌍 Play with Random Player</button>
+            </div>
+        </div>
+        <!-- Waiting Room Modal -->
+        <div id="waiting-modal" style="display: none;">
+            <h2>Finding Opponent...</h2>
+            <div class="loader"></div>
+            <p>Waiting for another player to join</p>
+            <button id="cancel-search">Cancel</button>
+        </div>
+        <!-- Game UI Overlay -->
+        <div id="game-ui" style="display: none;">
+            <div id="timer-bar">
+                <div id="timer-fill"></div>
+                <span id="timer-text">10</span>
+            </div>
+            <div id="choice-buttons">
+                <button id="btn-rock" class="choice-btn">🪨 Rock</button>
+                <button id="btn-paper" class="choice-btn">📄 Paper</button>
+                <button id="btn-scissors" class="choice-btn">✂️ Scissors</button>
+            </div>
+            <div id="result-display"></div>
+            <div id="score-board">
+                <span>You: <b id="player-score">0</b></span>
+                <span>Opponent: <b id="opponent-score">0</b></span>
+            </div>
+        </div>
     </div>
     <script type="module" src="src/main.js"></script>
 </body>
